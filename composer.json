@@ -1,0 +1,20 @@
+{
+    "name": "notsoweb/laravel-mongodb-permission",
+    "description": "Sistema de roles y permisos para laravel con mongodb",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Notsoweb\\LaravelMongoDB\\Permission\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "Moisés Cortés C.",
+            "email": "moises.cortes@notsoweb.com"
+        }
+    ],
+    "require": {
+        "mongodb/laravel-mongodb": "^4.7"
+    }
+}
