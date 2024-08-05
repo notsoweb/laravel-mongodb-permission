@@ -41,6 +41,10 @@ class ServiceProvider extends LaravelServiceProvider
             __DIR__.'/../config/permission.php', 'permission'
         );
 
+        $this->mergeConfigFrom(
+            __DIR__.'/../config/logging/channels.php', 'logging.channels'
+        );
+
     }
 
     /**
