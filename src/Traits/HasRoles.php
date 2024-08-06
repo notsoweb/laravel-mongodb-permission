@@ -111,7 +111,7 @@ trait HasRoles
         }
 
         if(strpos($roles, '|')) {
-            return in_array($this->roleName, $roles);
+            return in_array($this->roleName, explode('|', $roles));
         }
 
         return $roles == $this->roleName;
