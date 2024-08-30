@@ -5,7 +5,6 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use MongoDB\Laravel\Eloquent\Model;
 
 /**
  * Tipos de permisos
@@ -16,7 +15,7 @@ use MongoDB\Laravel\Eloquent\Model;
  * 
  * @version 1.0.0
  */
-class PermissionType extends Model
+class PermissionType extends BaseModel
 {
     /**
      * Atributos permitidos

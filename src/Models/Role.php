@@ -5,7 +5,6 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use MongoDB\Laravel\Eloquent\Model;
 
 /**
  * Roles del sistema
@@ -14,7 +13,7 @@ use MongoDB\Laravel\Eloquent\Model;
  * 
  * @version 1.0.0
  */
-class Role extends Model
+class Role extends BaseModel
 {
     /**
      * Atributos permitidos

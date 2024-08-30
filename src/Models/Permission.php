@@ -5,7 +5,7 @@
 
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
-use MongoDB\Laravel\Eloquent\Model;
+use MongoDB\Laravel\Eloquent\Casts\ObjectId;
 
 /**
  * Roles del sistema
@@ -14,7 +14,7 @@ use MongoDB\Laravel\Eloquent\Model;
  * 
  * @version 1.0.0
  */
-class Permission extends Model
+class Permission extends BaseModel
 {
     /**
      * Atributos permitidos
@@ -33,6 +33,16 @@ class Permission extends Model
         $this->table = config('permission.collections.permissions');
         
         parent::__construct($attributes);
+    }
+
+    /**
+     * Get the attributes that should be cast.
+     */
+    public function  casts()
+    {
+        return [
+            'permission_type_id' => ObjectId::class
+        ];
     }
 
     /**
