@@ -157,16 +157,22 @@ class Role extends BaseModel
                     return $this->preparePermissions(explode('|', $permissions));
                 }
 
-                $permissions = Permission::whereCode($permissions)
-                    ->orWhere('_id', $permissions)
-                    ->pluck('_id')
-                    ->firstOrFail();
+                try {
+                    $permissionId = Permission::whereCode($permissions)
+                        ->orWhere('_id', $permissions)
+                        ->pluck('_id')
+                        ->firstOrFail();
+    
+                    return $permissionId;
+                } catch (\Throwable $th) {
+                }
+            } else {
+                return $permissions->_id;
             }
-
-            return $permissions->_id;
+            
         } else {
             $items = [];
-
+            
             foreach ($permissions as $permission) {
                 $items[] = $this->preparePermissions($permission);
             }
